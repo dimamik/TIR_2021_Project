@@ -83,32 +83,102 @@
 
 \newpage
 
-\section{BlockChain}
+\section{Możliwe Tematy}
+% TODO Delete this section
+1. Wprowadzenie do tematu block-chain: czym się różni od systemów rozproszonych? Jakie ma wady i zalety?
+2. Obszary zastosowań block-chain, w tym: czy możemy za pomocą danej technologii określić wiarygodność danych,
+na których pracujemy? Czy w przypadku np. uszkodzenia sensora moglibyśmy cofnąć się na tyle, żeby określić, w którym momencie dane jeszcze nie były zaburzone?
+3. Możliwość implementacji danej technologii: jakie są wymagania? Czy istnieją pewne biblioteki albo narzędzia, ułatwiające implementację?
+4. Przegląd artykułów, związanych z danym tematem. Dostęp do artykułów możemy uzyskać za pomocą biblioteki głównej AGH. Szczególnie przez Pana Doktora zostało polecone przeglądnięcie IEEE Xplore na stronie http://www.bg.agh.edu.pl/pl/vezrodla/I
+Muszą być sprawdzone 5-10 artykułów na ten temat.
+5. Przegląd istniejących w tej chwili produktów oraz projektów na Github - czy w danej chwili są jakieś start-up`y, związane z daną technologią? Czy istnieje możliwość zakupu takich produktów? Kod nie jest potrzebny, tylko analiza, może jakaś tablica, wykresik itd.
+
+\section{Wprowadzenie do tematu blockchain}
 
 Wprowadzenie do tematu block-chain: czym się różni od systemów rozproszonych? Jakie ma wady i zalety?
 
 \subsection{Systemy rozproszone}
-System rozproszony (ang. distributed system) to zbiór niezależnych urządzeń technicznych połączonych w jedną, spójną logicznie całość.\cite{wiki-sr} \\
 
+\textbf{System rozproszony} to system, którego komponenty znajdują się na różnych komputerach w sieci, które komunikują się i koordynują swoje działania, przekazując sobie nawzajem wiadomości \cite{wiki-sr}. \\
+Istotne cechy systemów rozproszonych, to współbieżność komponentów, brak zegara globalnego i niezależna awaria komponentów. \\
+Powyższe pozwala na zdecentralizowanie systemu, który jest zbudowany na komputerach w sieci. Co pozwala na zwiększenie bezpieczeństwa oraz niezawodności takiego systemu.\\
+Jedną z możliwych technologji systemów rozproszonych jest Technologia rozproszonego rejestru (DLT). \\
 \subsection{Technologia rozproszonego rejestru (DLT)}
-\subsection{BlockChain}
+Technologia rozproszonego rejestru (również „Technologia rozproszonych rejestrów”, ang. Distributed Ledger Technology, DLT) - technologia rozproszonej bazy danych, której rejestry są replikowane, współdzielone i zsynchronizowane w ramach konsensusu różnych, rozproszonych geograficznie, osób, firm lub instytucji. \cite{wiki-dlt}
 
-\subsection{Czym się różni blockchain od systemów rozproszonych}
+W odróżnieniu od systemów zcentralizowanych nie ma centra przetwarzania danych oraz administratora centralnego.
+
+Informacja jest przechowywana w node'ach, każdy z których zawiera pełną kopię informacji w blokach zgodnie z czasem dodania.
+
+\begin{centerfig}
+  \includegraphics[width=\textwidth]{1.png}
+  \caption{Różnica między systemem rozproszonym a systemem zcentralizowanym \cite{sceta}}
+\end{centerfig}
+
+Podstawową zaletą jest decentralizacja. Gdy nastąpi aktualizacja "księgi", każdy węzeł konstruuje nową transakcję, a następnie węzły głosują według algorytmu konsensusu, który egzemplarz jest poprawny. Po ustaleniu konsensusu wszystkie inne węzły aktualizują się nową, poprawną kopią księgi.\\
+Bezpieczeństwo osiąga się za pomocą kluczy kryptograficznych i podpisów.
+
+\begin{centerfig}
+  \includegraphics[width=\textwidth]{2.png}
+  \caption{Własności DLT\cite{2png}}
+\end{centerfig}
+
+\subsection{Blockchain}
+
+Blockchain to rozproszona baza danych (DLT), która jest współużytkowana przez węzły sieci komputerowej.
+
+\begin{centerfig}
+  \includegraphics[width=\textwidth]{3.png}
+\end{centerfig}
+
+Blockchain to rosnąca lista rekordów, zwanych blokami, które są połączone ze sobą za pomocą kryptografii. Każdy blok zawiera skrót kryptograficzny poprzedniego bloku, znacznik czasu i dane transakcji (zazwyczaj reprezentowane jako drzewo Merkle). \\
+Znacznik czasu dowodzi, że dane transakcyjne istniały w momencie publikacji bloku w celu dostania się do jego hasha. Ponieważ każdy blok zawiera informacje o bloku poprzedzającym, tworzą one łańcuch, a każdy dodatkowy blok wzmacnia bloki przed nim. Dlatego łańcuchy bloków są odporne na modyfikację swoich danych, ponieważ raz zarejestrowane dane w dowolnym bloku nie mogą zostać zmienione wstecznie bez zmiany wszystkich kolejnych bloków. \cite{wiki-blockchain}
+
+Blockchainy są najbardziej znane ze swojej kluczowej roli w systemach kryptowalut, takich jak Bitcoin, w utrzymywaniu bezpiecznego i zdecentralizowanego rejestru transakcji. Innowacja w Blockchain polega na tym, że gwarantuje wierność i bezpieczeństwo rejestru danych oraz generuje zaufanie bez potrzeby korzystania z zaufanej strony trzeciej.
+
+% TODO Proof of work
+% TODO Some cleaning and rewriting
+
+
+\subsection{Czym się różni Blockchain od systemów rozproszonych i DLT}
+
+Blockchain to jedna z możliwych implementacji systemów DLT (które wówczas są systemami rozproszonymi). DLT nie wymaga od nas sekwencji bloków oraz użycia koncepcji "proof of work".
 
 \subsection{Wady i zalety blockchaina}
+
+\subsubsection{Wady}
+\begin{itemize}
+  \item Nie idealnie bezpieczny (wystarczy >50\% "node influence")
+  \item Nie energooszczędny
+  \item Brak centralizacji powoduję problemy (np. przy utracie klucza prywatnego, albo zapobieganie działaniam nielegalnym)
+\end{itemize}
+
+\subsubsection{Zalety}
+\begin{itemize}
+  \item Szybsze transakcję
+  \item Większe bezpieczeństwo
+  \item Decentralizacja
+\end{itemize}
 
 \section{SectionName}
 
 % Insert images
 \begin{centerfig}
-  \includegraphics[width=\textwidth]{img/1.png}
+  \includegraphics[width=\textwidth]{1.png}
 \end{centerfig}
 
 
 \begin{thebibliography}{9}
   \bibitem{wiki-sr}
-  \url{https://pl.wikipedia.org/wiki/System_rozproszony}
-
+  Tanenbaum, Andrew S.; Steen, Maarten van (2002). Distributed systems: principles and paradigms.
+  \bibitem{wiki-dlt}
+  Distributed Ledger Technology: beyond block chain, s. 2.
+  \bibitem{sceta}
+  \url{https://sceta.io/distributed-ledger-technologies}
+  \bibitem{2png}
+  \url{https://www.euromoney.com/learning/blockchain-explained/what-is-blockchain}
+  \bibitem{wiki-blockchain}
+  \url{https://en.wikipedia.org/wiki/Blockchain}
 \end{thebibliography}
 
 \end{document}
