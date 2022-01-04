@@ -71,7 +71,7 @@
 \author{
   \textit{AGH, Wydzial Informatyki Elektroniki i Telekomunikacji} \\ \\
   \textbf{Dzmitry Mikialevich}\\
-  \textbf{Imie Nazwisko}\\
+  \textbf{Kinga Sąkól}\\
   \textbf{Imie Nazwisko}\\
   \textbf{Imie Nazwisko}\\
   \textbf{Imie Nazwisko}\\ \\
@@ -167,6 +167,53 @@ Blockchain to jedna z możliwych implementacji systemów DLT (które wówczas s�
   \includegraphics[width=\textwidth]{1.png}
 \end{centerfig}
 
+\section{Obszary zastosowań blockchain, w tym: czy możemy za pomocą danej
+technologii określić wiarygodność danych, na których pracujemy? Czy w przypadku np. uszkodzenia sensora moglibyśmy cofnąć się na tyle, żeby określić, w którym momencie dane jeszcze nie były zaburzone?}
+
+\subsection{Obszary zastosowań blockchain}
+\subsubsection{Finanse}
+Instytucje finansowe przeprowadzają interesy z klientami przestrzegając określonych procedur, które często są dość skomplikowane. Są one jednak niezbędne do identyfikacji klientów oraz uzyskania rzetelnych danych.
+
+Sprawdzenie tożsamości jest konieczne do oszacowania ryzyka kontrahenta, ale też jest prowadzone w celu ochrony każdej ze stron od działań przestępczych. Zapobiega to oszustwami tożsamości bądź praniem brudnych pieniędzy.
+
+Zastosowanie technologii blockchain pozwala na redukcję niekorzystnych efektów stosowania obecnej formy autoryzacji klientów. Taka autoryzacja jest niewygodna dla klientów, często powoduje wysokie koszty operacyjne,a technologie, które są obecnie używane są mało elastyczne.
+
+Blockchain redukuje i eliminuje ilość sprawdzeń klienta, a także ułatwia wprowadzanie i przechowywanie danych. Co więcej dane, które są wprowadzane są szyfrowane a ich dystrybucja odbywa się w czasie rzeczywistym co jest bardzo korzystne np. w systemach bankowych. Ponadto, blockchain pozwala na wgląd w historię oraz zapewnia dowód, że wszelkie kontrolne akcje były przeprowadzone przez zaufaną jednostkę. Taki dowód to cyfrowy odpowiednik notarialnego poświadczenia tożsamości.
+
+Blockchain zapewnia replikację danych oraz pełną ścieżkę transakcji, daje możliwość cyfrowej tożsamości oraz cyfrowych podpisów. Inteligentne kontrakty skutkują pojawieniem się inteligentnych transakcji, ktore są odporne na manipulacje.
+
+\subsubsection{Energetyka}
+W tej branży blockchain jest wykorzystywany do rozliczania transakcji kupna-sprzedaży energii pomiędzy mały producentami (najczęśćiej będącymi małymi gospodarstwami) a odbiorcami energii (często rozproszonymi).
+Obecnie, rozwojowi energetyki rozproszonej nie sprzyja organizacja rynku energetycznego. Nowe systemy rozliczeń bazują na technologii blockchain. Są one rozproszone i nie ma w nim centralnych jednostek nadzorujących realizowane transakcje.
+
+Blockchain pozwala na zawieranie transakcji sprzedaży energii bezpośrednio, w czasie kilku sekund bez centralnego pośrednika. Dzięki temu znacznie zostaje obniżony koszt zakupu energii, co jest korzystne dla odbiorców.
+Oprócz tego, łańcuch bloków pozwala na rozliczanie transakcji na rynku energetycznym. Daje to możliwość kupowania energii od małych producentów.
+Systemy fotowoltaiczne montowane na budynkach posiadałyby oprogramowanie, które byłoby w stanie stwierdzić, czy bardziej korzystne jest sprzedanie wyprodukowanej nadwyżki energii, czy skonsumowanie jej samemu. 
+Obecnie pracuje się także nad rozliczeniami zakupu energii za ładowanie samochodów elektrycznych. Takie samochody będą posiadały oprogramowanie, które będzie umożliwiało zdalne rozliczanie się za sesję ładowania z wykorzystaniem kryptowalut.
+
+Założenia wykorzystane w tej branży są podobne do tych z sektora finansowego oraz samej idei blockchaina. Oprócz tego wprowadzono prosty model rozliczeń. Rozwiązywałoby to dość spory problem obecnych czasów - brak dostępu do stacji ładowania, dużo prościej byłoby, gdyby można było nałodować auto w dowolnym miejscu.
+
+
+\subsubsection{Transport towarów}
+W tym przypadku dane, które są przechowywane w blockchainie zawierają informacje o położeniu towaru. Dodatkowo mamy również zapis trasy, nie ma również możliwości modyfikacji przebytej trasy. Dzięki znakowaniu, jesteśmy w stanie również połączyć zapis lokalizacji z odpowiednim timestampem. 
+
+Odgrywa to ważną rolę w śledzeniu towarów wysokiej wartości (towary luksusowe, farmaceutyki bądź elektronika). Pozwala to ogarniczyć nadużycia podczas dystrybucji.
+Dzięki urządzeniom IoT możemy również rejestrować parametry takie jak: temperatura czy wilgotność powietrza. POzwala to sprawdzić watunki w jakich był transportowany produkt. Oczywiście zapisane wartości są niemodyfikowalne. Jest to ogromna korzyść dla odbiorców towarów, ponieważ są oni w stanie zweryfikować podróż produktów.
+
+\subsubsection{Inne zastosowania}
+Blockchain może być wykorzystywany również w segmencie ekologii np. do badania zmian klimatu. Pozwoli to przeciwdziałać zmianom klimatu. Urządzenia IoT w czasie rzeczywistym z odpowiednimi timestampami będą zapisywały informacje z różnych zakątków ziemi. Taki system będzie posiadał również swoją historię, do której będziemy mieli wgląd.
+
+
+
+\subsection{Czy w przypadku np. uszkodzenia sensora moglibyśmy cofnąć się na tyle, żeby określić, w którym momencie dane jeszcze nie były zaburzone?}
+
+Sensory rejestrują interesujące nas parametry. Może to być np. temperatura, poziom wilgotności itd. Następnie dane te są zapisywane w rejestrze blockchain. 
+
+Weryfikacja prawdziwości danych pochodzących z sensora następuje poprzez weryfikację wartości w kluczowych procesach. Stosuje się tutaj zasadę większości np. "2 z 3".
+
+Trzy sensory mierzą ten sam parametr. Jeżeli wszystkie podają tę samą wartość, przyjmuje się, że jest ona prawidłowa. Jeżeli dwa z nich wskazują poprawną wartość, a trzeci inną uznaje się, że jest on popsuty. W przypadku Jeśli każdy z nich podaje inne dane, to działanie systemu zostaje zatrzymane.
+
+Aby znależć moment, w którym mamy pewność, co do poprawności danych należy się cofnąć w punkt, gdzie wszystkie wskazania sensorów podawały taki sam wynik. Dzięki temu będziemy mieli pewność o rzetelności danych sprzed zaburzenia.
 
 \begin{thebibliography}{9}
   \bibitem{wiki-sr}
@@ -179,6 +226,10 @@ Blockchain to jedna z możliwych implementacji systemów DLT (które wówczas s�
   \url{https://www.euromoney.com/learning/blockchain-explained/what-is-blockchain}
   \bibitem{wiki-blockchain}
   \url{https://en.wikipedia.org/wiki/Blockchain}
+  \bibitem{obszary}
+  \url{https://www.lazarski.pl/pl/wydzialy-i-jednostki/instytuty/wydzial-ekonomii-i-zarzadzania/centrum-technologii-blockchain/blockchain-aspekty-technologiczne-oraz-przyklady-zastosowan/}
+  \bibitem{sensory}
+  \url{https://itwiz.pl/cyberbezpieczenstwo-czyli-jak-nie-dac-sie-zabic-w-swiecie-speed/}
 \end{thebibliography}
 
 \end{document}
